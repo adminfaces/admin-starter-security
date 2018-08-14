@@ -9,6 +9,7 @@ import com.github.adminfaces.starter.infra.model.SortOrder;
 import com.github.adminfaces.starter.model.Car;
 import com.github.adminfaces.template.exception.BusinessException;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.io.Serializable;
@@ -130,6 +131,7 @@ public class CarService implements Serializable {
                 .collect(Collectors.toList());
     }
 
+    //@RolesAllowed("ADMIN")
     public void insert(Car car) {
         validate(car);
         car.setId(allCars.stream()
@@ -162,6 +164,7 @@ public class CarService implements Serializable {
     }
 
 
+   // @RolesAllowed("ADMIN")
     public void remove(Car car) {
         allCars.remove(car);
     }
@@ -180,6 +183,7 @@ public class CarService implements Serializable {
                 .orElseThrow(() -> new BusinessException("Car not found with id " + id));
     }
 
+    //@RolesAllowed("ADMIN")
     public void update(Car car) {
         validate(car);
         allCars.remove(allCars.indexOf(car));

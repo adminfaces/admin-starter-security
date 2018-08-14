@@ -1,7 +1,7 @@
-= AdminFaces Starter project
+= AdminFaces Starter Security
 
 
-A simple project to get you started with https://github.com/adminfaces[AdminFaces^].
+A https://github.com/adminfaces[AdminFaces^] sample project using JavaEE 8 security API.
 
 .Login page
 image:starter1.png[link="https://github.com/adminfaces/admin-starter/blob/master/starter1.png"]
@@ -17,18 +17,15 @@ image:starter4.png[link="https://raw.githubusercontent.com/adminfaces/admin-star
 
 == Running
 
-It should run in any JavaEE 6 or greater application server.
+It should run in any JavaEE 8 application server.
 
-You can also run via wildfly-swarm with command `mvn wildfly-swarm:run -Pswarm`.
+It was tested with WildFly 13.0.0 using ee8-preview mode.
 
-Or using docker:
+*Or* using docker:
 
 ----
-docker run -it -p 8080:8080 rmpestano/admin-starter
+docker run -it -p 8080:8080 rmpestano/admin-starter-security
 ----
 
 The application is available at http://localhost:8080/admin-starter
 
-== Demo
-
-A live demo is available on Openshift here: http://admin-starter-admin-starter.1d35.starter-us-east-1.openshiftapps.com/admin-starter/
