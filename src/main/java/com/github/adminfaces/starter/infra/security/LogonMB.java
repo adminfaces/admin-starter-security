@@ -50,13 +50,14 @@ public class LogonMB extends AdminSession implements Serializable {
 	public void login() throws IOException {
 		switch (continueAuthentication()) {
 		case SEND_CONTINUE:
-			externalContext.getFlash().setKeepMessages(true);
+			facesContext.responseComplete();
 			break;
 		case SEND_FAILURE:
 			Messages.addError(null, "Login failed");
+			externalContext.getFlash().setKeepMessages(true);
 			break;
 		case SUCCESS:
-			facesContext.responseComplete();
+			externalContext.getFlash().setKeepMessages(true);
 			addDetailMessage("Logged in successfully as <b>" + email + "</b>");
 			Faces.redirect(adminConfig.getIndexPage());
 			break;
