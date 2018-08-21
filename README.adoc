@@ -18,7 +18,7 @@ image:starter4.png[link="https://raw.githubusercontent.com/adminfaces/admin-star
 
 == Authentication
 
-The application has two users configured via `Custom IdentityStore`, https://github.com/adminfaces/admin-starter/blob/master/src/main/java/com/github/adminfaces/starter/infra/security/CustomInMemoryIdentityStore.java[see here^].
+The application has two users configured via `Custom IdentityStore`, https://github.com/adminfaces/admin-starter-security/blob/master/src/main/java/com/github/adminfaces/starter/infra/security/CustomInMemoryIdentityStore.java[see here^].
 
 .email/password
 * admin@faces.com/admin
@@ -26,7 +26,7 @@ The application has two users configured via `Custom IdentityStore`, https://git
 
 == Authorization
 
-Admin user (role admin) can access any page while `user` can access only pages under `/pages` path (only car-list page). See https://github.com/adminfaces/admin-starter/blob/master/src/main/webapp/WEB-INF/web.xml[url security constraints^].
+Admin user (role admin) can access any page while `user` can access only pages under `/pages` path (only car-list page). See https://github.com/adminfaces/admin-starter-security/blob/master/src/main/webapp/WEB-INF/web.xml#L12[url security constraints^].
 
 Users without access to restricted pages (car-form) will be redirected to `Access Denied` page:
 
