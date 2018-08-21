@@ -155,7 +155,7 @@ public class CarService implements Serializable {
         }
 
         if (allCars.stream().filter(c -> c.getName().equalsIgnoreCase(car.getName())
-                && c.getId() != c.getId()).count() > 0) {
+                && c.getId() != car.getId()).count() > 0) {
             be.addException(new BusinessException("Car name must be unique"));
         }
         if(has(be.getExceptionList())) {
@@ -164,7 +164,7 @@ public class CarService implements Serializable {
     }
 
 
-   // @RolesAllowed("ADMIN")
+    @RolesAllowed("ADMIN")
     public void remove(Car car) {
         allCars.remove(car);
     }
@@ -176,6 +176,8 @@ public class CarService implements Serializable {
                 .count();
     }
 
+    // uncomment annotation below and try invoking find by ID in list page with non admin user 
+    //@RolesAllowed("ADMIN")
     public Car findById(Integer id) {
         return allCars.stream()
                 .filter(c -> c.getId().equals(id))
@@ -183,7 +185,7 @@ public class CarService implements Serializable {
                 .orElseThrow(() -> new BusinessException("Car not found with id " + id));
     }
 
-    //@RolesAllowed("ADMIN")
+    @RolesAllowed("ADMIN")
     public void update(Car car) {
         validate(car);
         allCars.remove(allCars.indexOf(car));
