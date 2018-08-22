@@ -25,7 +25,8 @@ The application has two users configured via `Custom IdentityStore`, https://git
 * user@faces.com/user
 
 `admin@faces.com` user has role `admin`.
-user@faces.com user has role `user`.
+
+`user@faces.com` user has role `user`.
 
 == Authorization
 
