@@ -52,7 +52,7 @@ TIP: Try using `find by ID` on car-list page with non admin user, it should redi
 
 It should run in any JavaEE 8 application server.
 
-It was tested with WildFly 13.0.0 using ee8-preview mode.
+It was tested with `WildFly 13.0.0` using ee8-preview mode and `Glassfish/Payara 5`.
 
 *Or* using docker:
 
