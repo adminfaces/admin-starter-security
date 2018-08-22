@@ -50,7 +50,7 @@ disabled="#{not externalContext.isUserInRole('ADMIN')"
 
 At method level `@RolesAllowed("ADMIN")` annotation is used.
 
-TIP: Try using `find by ID` on car-list page with non admin user, it should redirect to Access Denied page.
+TIP: Try using uncommenting finById rolesAllowed on https://github.com/adminfaces/admin-starter-security/blob/58edd484581722cdb7063879c0fac444fe89e7ff/src/main/java/com/github/adminfaces/starter/service/CarService.java#L181[carService here^] and use `find by ID` on car-list page with non admin user, it should redirect to Access Denied page.
 
 == Running
 
