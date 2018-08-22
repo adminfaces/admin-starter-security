@@ -4,5 +4,5 @@ MAINTAINER Rafael Pestano
 COPY ./target/admin-starter.war ${DEPLOYMENT_DIR}
 
 
-ENTRYPOINT ${WILDFLY_HOME}/bin/standalone-ee8.sh -b=0.0.0.0
+ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0  --server-config=standalone-ee8.xml
 
