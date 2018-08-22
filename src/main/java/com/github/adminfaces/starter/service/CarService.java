@@ -25,6 +25,7 @@ import static com.github.adminfaces.template.util.Assert.has;
  *         Car Business logic
  */
 @Stateless
+@RolesAllowed({"ADMIN","USER"})
 public class CarService implements Serializable {
 
     @Inject
@@ -131,7 +132,7 @@ public class CarService implements Serializable {
                 .collect(Collectors.toList());
     }
 
-    //@RolesAllowed("ADMIN")
+    @RolesAllowed("ADMIN")
     public void insert(Car car) {
         validate(car);
         car.setId(allCars.stream()
