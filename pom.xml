@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adminfaces.version>1.0.0-RC19-SNAPSHOT</adminfaces.version>
+        <adminfaces.version>1.0.0-RC19</adminfaces.version>
     </properties>
 
     <dependencies>
@@ -61,20 +61,6 @@
             need to exclude admin-theme brought by admin-template dependency) -->
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <snapshots />
-            <id>snapshots</id>
-            <name>libs-snapshot</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
     <build>
         <resources>
             <resource>
