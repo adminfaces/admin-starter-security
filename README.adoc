@@ -35,7 +35,7 @@ Admin user with `role admin` can access any page while `role user` can access on
 Users without access to restricted pages (car-form) will be redirected to `Access Denied` page:
 
 .AccessDenied
-image:403.png[link="https://raw.githubusercontent.com/adminfaces/admin-starter/master/403.png"]
+image:403.png[link="https://raw.githubusercontent.com/adminfaces/admin-starter-security/master/403.png"]
 
 
 Admin have permissions for all CRUD operations on top of Car entity while common user can only view/list cars.
