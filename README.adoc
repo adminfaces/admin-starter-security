@@ -30,12 +30,12 @@ The application has two users configured via `Custom IdentityStore`, https://git
 
 == Authorization
 
-Admin user with `role admin` can access any page while `role user` can access only pages under `/pages` path (only car-list page). See https://github.com/adminfaces/admin-starter-security/blob/master/src/main/webapp/WEB-INF/web.xml#L12[url security constraints^].
+Admin user with `role admin` can access any page while `role user` can access only pages under `/pages` path (only car-list page). See https://github.com/adminfaces/admin-starter-security/blob/9c5b989dbc02186d92a82fd4fe1373407ab822a6/src/main/webapp/WEB-INF/web.xml#L12-L38[url security constraints^].
 
 Users without access to restricted pages (car-form) will be redirected to `Access Denied` page:
 
 .AccessDenied
-image:403.png[link="https://raw.githubusercontent.com/adminfaces/admin-starter/master/403.png"]
+image:403.png[link="https://raw.githubusercontent.com/adminfaces/admin-starter-security/master/403.png"]
 
 
 Admin have permissions for all CRUD operations on top of Car entity while common user can only view/list cars.
