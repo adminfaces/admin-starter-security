@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adminfaces.version>1.0.0-RC19-SNAPSHOT</adminfaces.version>
+        <adminfaces.version>1.0.0-RC21-SNAPSHOT</adminfaces.version>
     </properties>
 
     <dependencies>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.2</version>
+            <version>7.0.RC2</version>
         </dependency>
         <dependency>
             <groupId>org.omnifaces</groupId>
@@ -111,7 +111,7 @@
         <profile>
             <id>standalone</id>
             <properties>
-                <version.thorntail>2.1.0.Final</version.thorntail>
+                <version.thorntail>2.2.1.Final</version.thorntail>
             </properties>
 
             <dependencies>

@@ -38,6 +38,9 @@
                         <p:commandButton value="View selected" update="@(.ui-dialog)" styleClass="btn-info"
                                          disabled="#{empty carListMB.selectedCars or carListMB.selectedCars.size() == 0}"
                                          oncomplete="PF('selectedCars').show()" icon="fa fa-search"/>
+                        <p:commandButton value="Clear" update="@(.ui-dialog, .ui-datatable)" process="@form"
+                                         action="#{carListMB.clear}"
+                                         icon="fa fa-refresh"/>
                     </div>
 
                     <p:splitButton value="New" action="/protected/car-form?faces-redirect=true"
@@ -54,6 +57,9 @@
                                     disabled="#{empty carListMB.selectedCars or carListMB.selectedCars.size() == 0}"
                                     icon="fa fa-search"
                                     />
+                        <p:menuitem value="Clear" update="@(.ui-dialog, .ui-datatable)" process="@form"
+                                    action="#{carListMB.clear}"
+                                    icon="fa fa-refresh"/>
                     </p:splitButton>
 
                     <p:separator/>
