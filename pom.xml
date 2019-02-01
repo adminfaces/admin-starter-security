@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>6.2</version>
+            <version>7.0.RC2</version>
         </dependency>
         <dependency>
             <groupId>org.omnifaces</groupId>
@@ -61,20 +61,6 @@
             need to exclude admin-theme brought by admin-template dependency) -->
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <snapshots />
-            <id>snapshots</id>
-            <name>libs-snapshot</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
     <build>
         <resources>
             <resource>
@@ -111,7 +97,7 @@
         <profile>
             <id>standalone</id>
             <properties>
-                <version.thorntail>2.1.0.Final</version.thorntail>
+                <version.thorntail>2.3.0.Final</version.thorntail>
             </properties>
 
             <dependencies>
@@ -133,7 +119,7 @@
                  <dependency>
                     <groupId>io.thorntail</groupId>
                     <artifactId>ee</artifactId>
-                    <version>${version.thorntail}</version>
+                     <version>${version.thorntail}</version>
                 </dependency>
                 <dependency>
                     <groupId>io.thorntail</groupId>
@@ -203,6 +189,22 @@
             </repositories>
         </profile>
     </profiles>
+
+
+    <repositories>
+        <repository>
+            <snapshots />
+            <id>snapshots</id>
+            <name>libs-snapshot</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 
 
 </project>
