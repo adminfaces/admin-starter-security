@@ -28,99 +28,99 @@ import static com.github.adminfaces.template.util.Assert.has;
 @Specializes
 public class LogonMB extends AdminSession implements Serializable {
 
-	@Inject
-	private AdminConfig adminConfig;
+    @Inject
+    private AdminConfig adminConfig;
 
-	@Inject
-	private SecurityContext securityContext;
-	
-	@Inject
-	private FacesContext facesContext;
-	
-	@Inject
-	private ExternalContext externalContext;
+    @Inject
+    private SecurityContext securityContext;
 
-	private String password;
+    @Inject
+    private FacesContext facesContext;
 
-	private String email;
+    @Inject
+    private ExternalContext externalContext;
 
-	private boolean remember;
-	
-	public void autoLogin() throws IOException {
-    	String emailCookie = Faces.getRequestCookie("admin-email");
-		String passCookie = Faces.getRequestCookie("admin-pass");
-		if(has(emailCookie) && has(passCookie)) {
-			this.email = emailCookie;
-			this.password = passCookie;
-			login();
-		}
-	}
+    private String password;
 
-	public void login() throws IOException {
-		switch (continueAuthentication()) {
-		case SEND_CONTINUE:
-			facesContext.responseComplete();
-			break;
-		case SEND_FAILURE:
-			Messages.addError(null, "Login failed");
-			externalContext.getFlash().setKeepMessages(true);
-			break;
-		case SUCCESS:
-			externalContext.getFlash().setKeepMessages(true);
-			addDetailMessage("Logged in successfully as <b>" + email + "</b>");
-			if(remember) {
-				storeCookieCredentials(email, password);
-			}
-			Faces.redirect(adminConfig.getIndexPage());
-			break;
-		case NOT_DONE:
-			Messages.addError(null, "Login failed");
-		}
-	}
-	
-	private void storeCookieCredentials(final String email, final String password) {
-		 Faces.addResponseCookie("admin-email", email, 1800);//store for 30min
-		 Faces.addResponseCookie("admin-pass", password, 1800);//store for 30min
-	}
+    private String email;
 
-	private AuthenticationStatus continueAuthentication() {
-		return securityContext.authenticate((HttpServletRequest) externalContext.getRequest(),
-				(HttpServletResponse) externalContext.getResponse(),
-				AuthenticationParameters.withParams().rememberMe(remember)
-				.credential(new UsernamePasswordCredential(email, password)));
-	}
-    
-	@Override
-	public boolean isLoggedIn() {
-		return securityContext.getCallerPrincipal() != null;
-	}
+    private boolean remember;
 
-	public String getEmail() {
-		return email;
-	}
+    public void autoLogin() throws IOException {
+        String emailCookie = Faces.getRequestCookie("admin-email");
+        String passCookie = Faces.getRequestCookie("admin-pass");
+        if (has(emailCookie) && has(passCookie)) {
+            this.email = emailCookie;
+            this.password = passCookie;
+            login();
+        }
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void login() throws IOException {
+        switch (continueAuthentication()) {
+            case SEND_CONTINUE:
+                facesContext.responseComplete();
+                break;
+            case SEND_FAILURE:
+                Messages.addError(null, "Login failed");
+                externalContext.getFlash().setKeepMessages(true);
+                break;
+            case SUCCESS:
+                externalContext.getFlash().setKeepMessages(true);
+                addDetailMessage("Logged in successfully as <b>" + email + "</b>");
+                if (remember) {
+                    storeCookieCredentials(email, password);
+                }
+                Faces.redirect(adminConfig.getIndexPage());
+                break;
+            case NOT_DONE:
+                Messages.addError(null, "Login failed");
+        }
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    private void storeCookieCredentials(final String email, final String password) {
+        Faces.addResponseCookie("admin-email", email, 1800);//store for 30min
+        Faces.addResponseCookie("admin-pass", password, 1800);//store for 30min
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    private AuthenticationStatus continueAuthentication() {
+        return securityContext.authenticate((HttpServletRequest) externalContext.getRequest(),
+                (HttpServletResponse) externalContext.getResponse(),
+                AuthenticationParameters.withParams().rememberMe(remember)
+                        .credential(new UsernamePasswordCredential(email, password)));
+    }
 
-	public boolean isRemember() {
-		return remember;
-	}
+    @Override
+    public boolean isLoggedIn() {
+        return securityContext.getCallerPrincipal() != null;
+    }
 
-	public void setRemember(boolean remember) {
-		this.remember = remember;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getCurrentUser() {
-		return securityContext.getCallerPrincipal() != null ? securityContext.getCallerPrincipal().getName() : "";
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isRemember() {
+        return remember;
+    }
+
+    public void setRemember(boolean remember) {
+        this.remember = remember;
+    }
+
+    public String getCurrentUser() {
+        return securityContext.getCallerPrincipal() != null ? securityContext.getCallerPrincipal().getName() : "";
+    }
 
 }
