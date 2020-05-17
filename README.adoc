@@ -16,8 +16,9 @@
 
 
 
-A https://github.com/adminfaces[AdminFaces^] sample project using JavaEE 8 security API.
+A https://github.com/adminfaces[AdminFaces^] sample project using JavaEE/JakartaEE 8 security API.
 
+== Screenshots 
 .Login page
 image:starter1.png[link="https://github.com/adminfaces/admin-starter/blob/master/starter1.png"]
 
