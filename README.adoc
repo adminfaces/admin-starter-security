@@ -5,7 +5,7 @@
 :linkattrs:
 :sectanchors:
 :sectlink:
-:numbered:
+:!numbered:
 :doctype: book
 :toc: preamble
 :tip-caption: :bulb:
