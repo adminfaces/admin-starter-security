@@ -1,6 +1,8 @@
 package com.github.adminfaces.starter.infra.model;
 
 
+import org.primefaces.model.FilterMeta;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -89,6 +91,6 @@ public class Filter<T extends Serializable> {
     }
 
     public Object getParam(String key) {
-        return getParams().get(key);
+        return ((FilterMeta)getParams().get(key)).getFilterValue();
     }
 }

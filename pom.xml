@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <adminfaces.version>1.0.0-RC21</adminfaces.version>
+        <adminfaces.version>1.1.1</adminfaces.version>
     </properties>
 
     <dependencies>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
-            <version>7.0</version>
+            <version>8.0</version>
         </dependency>
         <dependency>
             <groupId>org.omnifaces</groupId>
@@ -44,22 +44,12 @@
             <version>${adminfaces.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>com.github.adminfaces</groupId>
-                    <artifactId>admin-theme</artifactId>
-                </exclusion>
-                <exclusion>
                     <groupId>org.omnifaces</groupId>
                     <artifactId>omnifaces</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.github.adminfaces</groupId>
-            <artifactId>admin-theme</artifactId>
-            <version>${adminfaces.version}</version>
-            <!--<classifier>dev</classifier> uncompressed theme.css (note that you 
-            need to exclude admin-theme brought by admin-template dependency) -->
-        </dependency>
+
     </dependencies>
     <build>
         <resources>

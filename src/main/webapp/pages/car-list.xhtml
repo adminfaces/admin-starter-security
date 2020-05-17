@@ -21,6 +21,7 @@
 
     <ui:define name="body">
         <h:form>
+        	<p:focus context="@form"/>
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <div id="main-buttons" class="hidden-sm hidden-xs">
@@ -38,6 +39,7 @@
                         <p:commandButton value="View selected" update="@(.ui-dialog)" styleClass="btn-info"
                                          disabled="#{empty carListMB.selectedCars or carListMB.selectedCars.size() == 0}"
                                          oncomplete="PF('selectedCars').show()" icon="fa fa-search"/>
+                        <p:spacer width="5"/>
                         <p:commandButton value="Clear" update="@(.ui-dialog, .ui-datatable)" process="@form"
                                          action="#{carListMB.clear}"
                                          icon="fa fa-refresh"/>
