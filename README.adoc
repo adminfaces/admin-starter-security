@@ -54,9 +54,9 @@ TIP: Try using uncommenting finById rolesAllowed on https://github.com/adminface
 
 == Running
 
-It should run in any JavaEE 8 application server.
+It should run in any JavaEE/JakartaEE 8 application server.
 
-It was tested with `WildFly 16.0.0` using ee8-preview mode and `Glassfish/Payara 5`.
+It was tested with `WildFly 16.0.0` and `Glassfish/Payara 5`.
 
 *Or* using docker:
 
