@@ -50,18 +50,18 @@ disabled="#{not externalContext.isUserInRole('ADMIN')"
 
 At method level `@RolesAllowed("ADMIN")` annotation is used.
 
-TIP: Try using uncommenting finById rolesAllowed on https://github.com/adminfaces/admin-starter-security/blob/58edd484581722cdb7063879c0fac444fe89e7ff/src/main/java/com/github/adminfaces/starter/service/CarService.java#L181[carService here^] and use `find by ID` on car-list page with non admin user, it should redirect to Access Denied page.
+TIP: Try using uncommenting finById rolesAllowed on https://github.com/adminfaces/admin-starter-security/blob/master/src/main/java/com/github/adminfaces/starter/service/CarService.java#L181[carService here^] and use `find by ID` on car-list page with non admin user, it should redirect to Access Denied page.
 
 == Running
 
 It should run in any JavaEE 8 application server.
 
-It was tested with `WildFly 13.0.0` using ee8-preview mode and `Glassfish/Payara 5`.
+It was tested with `WildFly 16.0.0` using ee8-preview mode and `Glassfish/Payara 5`.
 
 *Or* using docker:
 
 ----
-docker run -it -p 8080:8080 rmpestano/admin-starter-security
+docker run -it --rm -p 8080:8080 rmpestano/admin-starter-security
 ----
 
 The application is available at http://localhost:8080/admin-starter
