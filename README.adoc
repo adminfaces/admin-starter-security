@@ -1,4 +1,19 @@
 = AdminFaces Starter Security
+:page-layout: base
+:source-language: java
+:icons: font
+:linkattrs:
+:sectanchors:
+:sectlink:
+:numbered:
+:doctype: book
+:toc: preamble
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
 
 
 A https://github.com/adminfaces[AdminFaces^] sample project using JavaEE 8 security API.
